@@ -8,12 +8,12 @@
 
 install Python
 
-install Algorand Python SDK
+install the dependencies
 ```
-pip3 install py-algorand-sdk
+pip3 pip install -r requirements.txt
 ```
 
-open autobet.py with your favorite editor and configure where required
+open config.py with your favorite editor and configure where required
 
 run the script
 
