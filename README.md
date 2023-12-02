@@ -10,7 +10,7 @@ install Python
 
 install the dependencies
 ```
-pip3 pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 open config.py with your favorite editor and configure where required
