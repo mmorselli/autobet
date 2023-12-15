@@ -68,9 +68,15 @@ def ToMicro(amount,decimals):
     factor = 10 ** decimals
     return int(amount * factor)
 
-# creates a string array of 6 uppercase hexadecimal numbers
-def CreateBets():
+# DEPRECATED: creates a string array of 6 uppercase hexadecimal numbers
+def CreateBetsOld():
     bets = [format(random.randint(0, 255), '02X') for _ in range(6)]
+    return bets
+
+# creates a string array of NOT DUPLICATED 6 uppercase hexadecimal numbers
+def CreateBets():
+    bets = random.sample(range(256), 6)
+    bets = [format(bet, '02X') for bet in bets]
     return bets
 
 # create a standard LOTTOR note
