@@ -90,7 +90,7 @@ def CreateNote(nextround,bets):
 
 def get_reference_prices():
     baseurl = "api" if NETWORK == "mainnet" else "apitestnet"
-    response = requests.get('https://'+baseurl+'.lottorace.cloud/referenceprices')
+    response = requests.get('https://'+baseurl+'.lottorace.cloud/enabledreferenceprices')
     data = response.json()
     return data
 
