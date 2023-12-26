@@ -23,18 +23,11 @@ def isBetween23and24UTC():
         return start <= now <= end
 
 
-def getNextRoundAtDate(currentDateTs):
-    startDate = datetime(2023, 10, 10, 0, 0, 0)
-    diffInSecs = currentDateTs - startDate.timestamp()
-    diffInDays = -(-diffInSecs // (24 * 60 * 60))  # Calcola il ceil
-    nextIncrement = diffInDays * 2880
-    return int(STARTINGPOINT + nextIncrement)  
-
 
 def getNetxRound():
-    currentDateTs = int(datetime.now().timestamp())
-    result = getNextRoundAtDate(currentDateTs)
-    return result
+    response = requests.get('https://api.lottorace.cloud/getnextround')
+    data = response.json()
+    return data['round']
 
 
 # send a single bet to LOTTOR
